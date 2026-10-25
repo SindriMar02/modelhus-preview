@@ -1,0 +1,37 @@
+/* Módelhús skin on the Vantra system. Layout, type and motion stay the source's.
+   Sections with no verified Módelhús content are hidden here, not redesigned. */
+
+/* Template promo badge, template-only footer links, studio-only sections */
+.ctm-box, .ctm-link, .footer_links-grid,
+.statement_marquee,
+.section_culture, .section_testimonials, .section_more-journal,
+.section_profile, .section_team, .section_quote,
+.filter_wrap, .filter_bar { display: none !important; }
+
+/* Nav: no journal, no studio categories, no profile/team anchors */
+.nav_menu-loader:has(> a[href="/modelhus-preview/journal"]),
+a.nav_submenu-link[href^="/modelhus-preview/categories/"],
+a.nav_submenu-link[href="/modelhus-preview/about-us#profile"],
+a.nav_submenu-link[href="/modelhus-preview/about-us#team"],
+a.footer_nav-link[href="/modelhus-preview/journal"] { display: none !important; }
+
+/* Work grid: six buildings with photos; the two spare template cases stay hidden */
+.w-dyn-item:has(> a[href="/modelhus-preview/work/northwind"]),
+.w-dyn-item:has(> a[href="/modelhus-preview/work/luma"]) { display: none !important; }
+
+/* Awards: rows 2 and 4 carry template text split around "&"; the four Framúrskarandi years stay */
+.awards_list .awards_item:nth-child(2 of .awards_item),
+.awards_list .awards_item:nth-child(4 of .awards_item) { display: none !important; }
+
+/* Wordmark is 5:1, the mark slot was square */
+.logo_image { width: auto !important; height: 1.1em; max-width: none; object-fit: contain; }
+
+/* Icelandic capitalises the first word only */
+.footer_nav-text { text-transform: none !important; }
+
+/* Profile PDF button (no Módelhús profile) and the footer's square mark slot (wordmark is wide) */
+.team_action,
+img[src*="mark-soft-bone"]:not(.logo_image) { display: none !important; }
+
+/* The template's band photo was a dark long exposure; daylight buildings need the same depth for white text */
+.section_careers img { filter: brightness(.58) saturate(.9); }
