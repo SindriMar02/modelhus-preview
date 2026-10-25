@@ -52,3 +52,6 @@ img[src*="mark-soft-bone"]:not(.logo_image) { display: none !important; }
 }
 /* The rebrand removes the template credit text; remove its empty link too. */
 .footer a.link.is-light:empty { display: none; }
+
+/* Phone: the hero filled the large viewport, so iOS Safari's toolbar covered the last headline line */
+@media (max-width: 767px) { .section_hero { height: 100svh !important; min-height: 0 !important; } }
