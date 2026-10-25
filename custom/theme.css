@@ -35,3 +35,20 @@ img[src*="mark-soft-bone"]:not(.logo_image) { display: none !important; }
 
 /* The template's band photo was a dark long exposure; daylight buildings need the same depth for white text */
 .section_careers img { filter: brightness(.58) saturate(.9); }
+
+/* Phone hit areas: preserve the glyph position and desktop layout. */
+@media (max-width: 767px) {
+  .nav_menu-button {
+    width: 44px;
+    height: 44px;
+    margin: calc((var(--spaces--space-1-25x) - 44px) / 2);
+  }
+  .nav_menu-row, .nav_submenu-link, .nav_panel-cta, .footer_nav-link { min-height: 44px; }
+  .footer .link.is-light:not(:empty) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+/* The rebrand removes the template credit text; remove its empty link too. */
+.footer a.link.is-light:empty { display: none; }
